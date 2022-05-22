@@ -1,5 +1,6 @@
 package ru.otus.daggerhomework
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,11 @@ class FragmentProducer : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_a, container, true)
+    }
+
+    override fun onAttach(context: Context) {
+        (requireActivity().application as App).component.inject(this)
+        super.onAttach(context)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
