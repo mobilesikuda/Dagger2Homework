@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import java.lang.RuntimeException
+import javax.inject.Inject
 
-class ViewModelProducer(
+class ViewModelProducer @Inject constructor(
     private val colorGenerator: ColorGenerator,
     private val context: Context
 ) : ViewModel() {

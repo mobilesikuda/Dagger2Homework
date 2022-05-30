@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import java.lang.RuntimeException
+import javax.inject.Inject
 
-class ViewModelReceiver(
+class ViewModelReceiver @Inject constructor(
     private val context: Context
 ) : ViewModel() {
 

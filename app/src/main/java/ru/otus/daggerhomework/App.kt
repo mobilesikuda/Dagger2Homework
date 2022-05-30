@@ -2,19 +2,14 @@ package ru.otus.daggerhomework
 
 import android.app.Application
 import android.content.Context
+import ru.otus.daggerhomework.di.ApplicationComponent
+import ru.otus.daggerhomework.di.DaggerApplicationComponent
 
 
-class App(
-    val context: Context
-    ) :Application () {
+class App() :Application () {
 
     val component: ApplicationComponent by lazy {
-        //DaggerApplicationComponent.create()
-        DaggerApplicationComponent.factory().create(applicationContext)
-    }
-
-    init {
-         component.inject(this)
+        DaggerApplicationComponent.factory().create( applicationContext )
     }
 
 }
